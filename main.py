@@ -20,6 +20,11 @@ class UrlRequest(BaseModel):
     url: str
 
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the FastAPI app"}
+
+
 @app.post("/process-url")
 async def process_url(request: UrlRequest):
     url = request.url
