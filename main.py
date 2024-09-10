@@ -10,7 +10,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "chrome-extension://lgpjnfflgaaecenaeikciemgoaoonhnj"
+        "*"
     ],  # Add your extension's origin here
     allow_credentials=True,
     allow_methods=["*"],  # Allows all HTTP methods
@@ -30,5 +30,6 @@ async def root():
 @app.post("/process-url")
 async def process_url(request: UrlRequest):
     url = request.url
+    print 
     summarized_text = generate_summary(url)
     return {"summary": summarized_text}
