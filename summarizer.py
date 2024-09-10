@@ -66,8 +66,7 @@ def extract_info_and_store(response_text):
         "Website": website_name,
         "Purpose": purpose,
     }
-
-    print("Extracted data = ", extracted_data)
+    return extracted_data
 
 
 def generate_summary(url):
@@ -96,5 +95,4 @@ def generate_summary(url):
 
     response = model.generate_content(prompt)
     summarized_text = clean_text(to_markdown(response.text).data)
-
     return extract_info_and_store(summarized_text)
