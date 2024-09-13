@@ -84,7 +84,7 @@ def generate_summary(url):
     Text: {content}
 
     Instructions:
-    1. If the content is a web article or YouTube video caption, provide a medium sized summary containing main points from the Text in the following format:
+    1. If the content is a web article or YouTube video caption, summarize the text in the following format:
         - **Topic**: 
         - **Summary**: 
 
